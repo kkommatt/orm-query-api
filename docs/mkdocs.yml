@@ -1,0 +1,61 @@
+site_name: orm-query-api
+site_description: Declarative Query Builder for FastAPI + SQLAlchemy
+site_author: Your Name
+repo_url: https://github.com/kkommatt/orm-query-api
+site_url: https://kkommatt.github.io/orm-query-api
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - content.code.copy
+    - search.suggest
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/install.md
+      - Quickstart: getting-started/quickstart.md
+  - Usage:
+      - Registering Models: usage/register.md
+      - Writing Queries: usage/query.md
+  - Reference:
+      - API Reference: reference/api.md
+  - Advanced:
+      - Serializers: advanced/serializers.md
+      - Extending Grammar: advanced/grammar.md
+  - FAQ: faq.md
+
+plugins:
+  - search
+  - glightbox
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys; sys.path.insert(0, "src")
+  - mermaid2
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.inlinehilite
+  - pymdownx.highlight

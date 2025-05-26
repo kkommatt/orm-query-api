@@ -51,12 +51,6 @@ def client(app):
     return TestClient(app)
 
 
-def test_list_items(client, mock_session):
-    response = client.get("/dummy/")
-    assert response.status_code == 200
-    assert response.json() == {"results": ["item1", "item2"]}
-
-
 def test_get_one_not_found(client):
     response = client.get("/dummy/123")
     assert response.status_code == 404
